@@ -2,42 +2,50 @@
 const cardsData = [
     {
         logoUrl: '../images/logos/Poe2Logo.png',
-        backgroundUrl: '../images/cardBacks/poe-1.webp',
+        backgroundUrl: '../images/cardBacks/witch-on-beach.webp',
+        frontImageUrl: '../images/cardFronts/witch.webp',
     },
     {
         logoUrl: '../images/logos/Poe2Logo.png',
         backgroundUrl: '../images/cardBacks/poe-2.webp',
+        frontImageUrl: '../images/cardFronts/witch.webp',
     },
     {
         logoUrl: '../images/logos/Poe2Logo.png',
         backgroundUrl: '../images/cardBacks/poe-3.webp',
+        frontImageUrl: '../images/cardFronts/witch.webp',
     },
     {
         logoUrl: '../images/logos/Poe2Logo.png',
-        backgroundUrl: '../images/cardBacks/poe-4.webp',
+        backgroundUrl: '../images/cardBacks/poe-1.webp',
+        frontImageUrl: '../images/cardFronts/witch.webp',
     },
     {
         logoUrl: '../images/logos/Poe2Logo.png',
         backgroundUrl: '../images/cardBacks/poe-5.webp',
+        frontImageUrl: '../images/cardFronts/witch.webp',
     },
     {
         logoUrl: '../images/logos/Poe2Logo.png',
         backgroundUrl: '../images/cardBacks/poe-6.webp',
+        frontImageUrl: '../images/cardFronts/witch.webp',
     },
     {
         logoUrl: '../images/logos/Poe2Logo.png',
         backgroundUrl: '../images/cardBacks/poe-7.webp',
+        frontImageUrl: '../images/cardFronts/witch.webp',
     },
     {
         logoUrl: '../images/logos/Poe2Logo.png',
         backgroundUrl: '../images/cardBacks/poe-8.webp',
+        frontImageUrl: '../images/cardFronts/witch.webp',
     },
 ];
 </script>
 
 <template>
     <div
-        class="flex min-h-screen items-center gap-16 overflow-auto bg-slate-800 p-16 [perspective:500px]"
+        class="flex min-h-screen snap-x items-center gap-16 overflow-auto bg-slate-800 p-16 [perspective:500px]"
     >
         <DisplayCard v-for="cardData in cardsData" :cardData="cardData" />
     </div>
