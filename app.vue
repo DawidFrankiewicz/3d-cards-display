@@ -1,9 +1,44 @@
 <script setup>
-
+const cardsData = [
+    {
+        logoUrl: '../images/logos/Poe2Logo.png',
+        backgroundUrl: '../images/cardBacks/poe-1.webp',
+    },
+    {
+        logoUrl: '../images/logos/Poe2Logo.png',
+        backgroundUrl: '../images/cardBacks/poe-2.webp',
+    },
+    {
+        logoUrl: '../images/logos/Poe2Logo.png',
+        backgroundUrl: '../images/cardBacks/poe-3.webp',
+    },
+    {
+        logoUrl: '../images/logos/Poe2Logo.png',
+        backgroundUrl: '../images/cardBacks/poe-4.webp',
+    },
+    {
+        logoUrl: '../images/logos/Poe2Logo.png',
+        backgroundUrl: '../images/cardBacks/poe-5.webp',
+    },
+    {
+        logoUrl: '../images/logos/Poe2Logo.png',
+        backgroundUrl: '../images/cardBacks/poe-6.webp',
+    },
+    {
+        logoUrl: '../images/logos/Poe2Logo.png',
+        backgroundUrl: '../images/cardBacks/poe-7.webp',
+    },
+    {
+        logoUrl: '../images/logos/Poe2Logo.png',
+        backgroundUrl: '../images/cardBacks/poe-8.webp',
+    },
+];
 </script>
 
 <template>
-    <div class="px-2 xl:container xl:mx-auto">
-        
+    <div
+        class="flex min-h-screen items-center gap-16 overflow-auto bg-slate-800 p-16 [perspective:500px]"
+    >
+        <DisplayCard v-for="cardData in cardsData" :cardData="cardData" />
     </div>
 </template>

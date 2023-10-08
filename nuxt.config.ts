@@ -7,7 +7,7 @@ export default defineNuxtConfig({
             htmlAttrs: {
                 lang: 'en',
             },
-        }
+        },
     },
     devtools: { enabled: true },
     css: ['~/assets/css/main.css'],
