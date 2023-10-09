@@ -25,6 +25,7 @@ const props = defineProps(['cardData']);
             height="60"
             alt="Path of Exile 2"
         />
+        <!-- -->
         <img
             v-if="props.cardData.frontImageUrl && props.cardData.backgroundUrl"
             class="absolute left-1/2 top-0 z-10 h-full w-full -translate-x-1/2 translate-y-10 object-contain opacity-0 transition-all duration-500 [mask-image:linear-gradient(to_top,transparent_25%,black_35%)] group-hover:-translate-y-10 group-hover:opacity-100"

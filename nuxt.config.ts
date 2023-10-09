@@ -6,6 +6,7 @@ export default defineNuxtConfig({
             title: 'Display Cards',
             htmlAttrs: {
                 lang: 'en',
+                class: 'bg-gray-100',
             },
         },
     },
