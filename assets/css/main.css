@@ -6,7 +6,7 @@
     .scrollbar-styled {
         /* width */
         &::-webkit-scrollbar {
-            @apply h-3;
+            @apply h-1;
         }
 
         /* Track */
