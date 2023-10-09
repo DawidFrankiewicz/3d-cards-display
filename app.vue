@@ -2,42 +2,43 @@
 const cardsData = [
     {
         logoUrl: '../images/logos/Poe2Logo.png',
-        backgroundUrl: '../images/cardBacks/witch-on-beach.webp',
+        backgroundImageUrl: '../images/cardBacks/witch-on-beach.webp',
         frontImageUrl: '../images/cardFronts/witch.webp',
     },
     {
         logoUrl: '../images/logos/Poe2Logo.png',
-        backgroundUrl: '../images/cardBacks/poe-2.webp',
+        backgroundImageUrl: '../images/cardBacks/poe-6.webp',
+        frontImageUrl: '../images/cardFronts/witch.webp',
+        backgroundImageClasses: '[object-position:38%_center]',
+    },
+    {
+        logoUrl: '../images/logos/Poe2Logo.png',
+        backgroundImageUrl: '../images/cardBacks/poe-7.webp',
         frontImageUrl: '../images/cardFronts/witch.webp',
     },
     {
         logoUrl: '../images/logos/Poe2Logo.png',
-        backgroundUrl: '../images/cardBacks/poe-3.webp',
+        backgroundImageUrl: '../images/cardBacks/poe-2.webp',
         frontImageUrl: '../images/cardFronts/witch.webp',
     },
     {
         logoUrl: '../images/logos/Poe2Logo.png',
-        backgroundUrl: '../images/cardBacks/poe-1.webp',
+        backgroundImageUrl: '../images/cardBacks/poe-3.webp',
         frontImageUrl: '../images/cardFronts/witch.webp',
     },
     {
         logoUrl: '../images/logos/Poe2Logo.png',
-        backgroundUrl: '../images/cardBacks/poe-5.webp',
+        backgroundImageUrl: '../images/cardBacks/poe-1.webp',
         frontImageUrl: '../images/cardFronts/witch.webp',
     },
     {
         logoUrl: '../images/logos/Poe2Logo.png',
-        backgroundUrl: '../images/cardBacks/poe-6.webp',
+        backgroundImageUrl: '../images/cardBacks/poe-5.webp',
         frontImageUrl: '../images/cardFronts/witch.webp',
     },
     {
         logoUrl: '../images/logos/Poe2Logo.png',
-        backgroundUrl: '../images/cardBacks/poe-7.webp',
-        frontImageUrl: '../images/cardFronts/witch.webp',
-    },
-    {
-        logoUrl: '../images/logos/Poe2Logo.png',
-        backgroundUrl: '../images/cardBacks/poe-8.webp',
+        backgroundImageUrl: '../images/cardBacks/poe-8.webp',
         frontImageUrl: '../images/cardFronts/witch.webp',
     },
 ];
