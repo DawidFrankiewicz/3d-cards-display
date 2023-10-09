@@ -45,7 +45,7 @@ const cardsData = [
 
 <template>
     <div
-        class="scrollbar-styled flex min-h-screen snap-x items-center gap-16 overflow-auto bg-slate-800 px-[50vw] py-16 [perspective:500px]"
+        class="scrollbar-styled flex min-h-screen snap-x items-center gap-16 overflow-auto bg-slate-800 px-[30vw] py-16 [perspective:500px] sm:px-[50vw]"
     >
         <DisplayCard v-for="cardData in cardsData" :cardData="cardData" />
     </div>
