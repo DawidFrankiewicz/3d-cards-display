@@ -10,7 +10,9 @@ defineProps({
 </script>
 
 <template>
-    <div class="group relative aspect-[9/16] w-64 flex-shrink-0 snap-center">
+    <div
+        class="group relative aspect-[9/16] w-64 flex-shrink-0 snap-center overflow-visible"
+    >
         <!-- Card Background -->
         <div
             v-if="cardData.backgroundImageUrl"
@@ -45,7 +47,12 @@ defineProps({
         <!-- Card Front Image -->
         <img
             v-if="cardData.frontImageUrl && cardData.backgroundImageUrl"
-            class="absolute left-1/2 top-0 z-10 h-full w-full -translate-x-1/2 translate-y-10 object-contain opacity-0 transition-all duration-500 [mask-image:linear-gradient(to_top,transparent_25%,black_35%)] group-hover:-translate-y-10 group-hover:opacity-100"
+            :class="
+                twMerge(
+                    'absolute bottom-0 left-1/2 z-10 h-full w-full max-w-lg -translate-x-1/2 translate-y-10 object-contain opacity-0 transition-all duration-500 [mask-image:linear-gradient(to_top,transparent_25%,black_35%)] group-hover:-translate-y-10 group-hover:opacity-100',
+                    cardData.frontImageClasses
+                )
+            "
             :src="cardData.frontImageUrl"
             width="180"
             height="250"
