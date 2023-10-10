@@ -1,4 +1,6 @@
 <script setup>
+import { twMerge } from 'tailwind-merge';
+
 const cardsData = [
     {
         logoUrl: '../images/logos/Poe2Logo.png',
@@ -48,28 +50,29 @@ const cardsData = [
 
 //// Scroll Controlls
 // Constants
+// 1 gap width + 1 card width
 const distanceBetweenCards = 352;
 
 // Refs
 const cardsContainer = ref(null);
 
 // Reactive
-const conteinersScrollLeft = ref(0);
-const conteinersScrollMax = ref(0);
+const containersScrollLeft = ref(0);
+const containersScrollMax = ref(0);
 
 onMounted(() => {
     // Get initial scroll position
-    conteinersScrollLeft.value = cardsContainer.value.scrollLeft;
+    containersScrollLeft.value = cardsContainer.value.scrollLeft;
     // Get max scroll position
-    conteinersScrollMax.value =
+    containersScrollMax.value =
         cardsContainer.value.scrollWidth - cardsContainer.value.clientWidth;
 });
 
 // Methods
 const scrollToNextCard = () => {
     if (
-        conteinersScrollLeft.value >=
-        conteinersScrollMax.value - distanceBetweenCards
+        containersScrollLeft.value >=
+        containersScrollMax.value - distanceBetweenCards / 2
     )
         return;
     cardsContainer.value.scrollBy({
@@ -79,7 +82,7 @@ const scrollToNextCard = () => {
 };
 
 const scrollToPrevCard = () => {
-    if (conteinersScrollLeft.value <= 0 + distanceBetweenCards) return;
+    if (containersScrollLeft.value <= 0 + distanceBetweenCards / 2) return;
     cardsContainer.value.scrollBy({
         left: -distanceBetweenCards,
         behavior: 'smooth',
@@ -91,7 +94,7 @@ const scrollToPrevCard = () => {
     <div class="relative bg-slate-800">
         <!-- Cards Container -->
         <div
-            @scroll="conteinersScrollLeft = cardsContainer.scrollLeft"
+            @scroll="containersScrollLeft = cardsContainer.scrollLeft"
             ref="cardsContainer"
             class="scrollbar-styled relative flex min-h-screen snap-x items-center gap-24 overflow-x-auto px-[30vw] py-16 [perspective:500px] sm:px-[50vw]"
         >
@@ -100,7 +103,14 @@ const scrollToPrevCard = () => {
         <!-- Scroll Controlls (Desktop Only) -->
         <button
             @click="scrollToPrevCard()"
-            class="absolute bottom-1 left-0 top-0 z-40 hidden w-28 items-center justify-center opacity-0 transition-opacity duration-500 [background-image:linear-gradient(270deg,rgba(255,255,255,0)0%,rgba(4,4,4,0.6)70%)] hover:opacity-100 md:flex"
+            :class="
+                twMerge(
+                    'absolute bottom-1 left-0 top-0 z-40 hidden w-28 items-center justify-center opacity-0 transition-opacity duration-500 [background-image:linear-gradient(270deg,rgba(255,255,255,0)0%,rgba(4,4,4,0.6)70%)] hover:opacity-100 md:flex',
+                    containersScrollLeft >= distanceBetweenCards / 2
+                        ? ''
+                        : 'pointer-events-none hover:opacity-0'
+                )
+            "
         >
             <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -115,7 +125,15 @@ const scrollToPrevCard = () => {
         </button>
         <button
             @click="scrollToNextCard()"
-            class="absolute bottom-1 right-0 top-0 z-40 hidden w-28 items-center justify-center opacity-0 transition-opacity duration-500 [background-image:linear-gradient(90deg,rgba(255,255,255,0)0%,rgba(4,4,4,0.6)70%)] hover:opacity-100 md:flex"
+            :class="
+                twMerge(
+                    'absolute bottom-1 right-0 top-0 z-40 hidden w-28 items-center justify-center opacity-0 transition-opacity duration-500 [background-image:linear-gradient(90deg,rgba(255,255,255,0)0%,rgba(4,4,4,0.6)70%)] hover:opacity-100 md:flex',
+                    containersScrollLeft <=
+                        containersScrollMax - distanceBetweenCards / 2
+                        ? ''
+                        : 'pointer-events-none hover:opacity-0'
+                )
+            "
         >
             <svg
                 xmlns="http://www.w3.org/2000/svg"
