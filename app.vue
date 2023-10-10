@@ -3,49 +3,47 @@ import { twMerge } from 'tailwind-merge';
 
 const cardsData = [
     {
-        logoUrl: '../images/logos/Poe2Logo.png',
+        logoUrl: '../images/logos/poe-2-logo.png',
         backgroundImageUrl: '../images/cardBacks/witch-on-beach.webp',
         frontImageUrl: '../images/cardFronts/witch.webp',
     },
     {
-        logoUrl: '../images/logos/Poe2Logo.png',
-        backgroundImageUrl: '../images/cardBacks/poe-6.webp',
+        logoUrl: '../images/logos/poe-2-logo.png',
+        backgroundImageUrl: '../images/cardBacks/flying-arrow.webp',
         frontImageUrl: '../images/cardFronts/archer.webp',
         backgroundImageClasses: '[object-position:38%_center]',
     },
     {
-        logoUrl: '../images/logos/Poe2Logo.png',
-        backgroundImageUrl: '../images/cardBacks/poe-7.webp',
+        logoUrl: '../images/logos/poe-2-logo.png',
+        backgroundImageUrl: '../images/cardBacks/maruder.webp',
         frontImageUrl: '../images/cardFronts/gladiator.webp',
         frontImageClasses:
-            '[height:calc(100%+120px)] -bottom-10 object-cover w-auto -translate-x-[calc(50%+40px)]',
+            '[height:calc(100%+120px)] -bottom-10 w-auto -translate-x-[calc(50%+40px)]',
     },
-    // {
-    //     logoUrl: '../images/logos/Poe2Logo.png',
-    //     backgroundImageUrl: '../images/cardBacks/poe-5.webp',
-    //     frontImageUrl: '../images/cardFronts/cassia.webp',
-    //     backgroundImageClasses: '[object-position:44%_center]',
-    // },
-    // {
-    //     logoUrl: '../images/logos/Poe2Logo.png',
-    //     backgroundImageUrl: '../images/cardBacks/poe-2.webp',
-    //     frontImageUrl: '../images/cardFronts/witch.webp',
-    // },
-    // {
-    //     logoUrl: '../images/logos/Poe2Logo.png',
-    //     backgroundImageUrl: '../images/cardBacks/poe-3.webp',
-    //     frontImageUrl: '../images/cardFronts/witch.webp',
-    // },
-    // {
-    //     logoUrl: '../images/logos/Poe2Logo.png',
-    //     backgroundImageUrl: '../images/cardBacks/poe-1.webp',
-    //     frontImageUrl: '../images/cardFronts/witch.webp',
-    // },
-    // {
-    //     logoUrl: '../images/logos/Poe2Logo.png',
-    //     backgroundImageUrl: '../images/cardBacks/poe-8.webp',
-    //     frontImageUrl: '../images/cardFronts/witch.webp',
-    // },
+    {
+        logoUrl: '../images/logos/lol-logo.png',
+        logoClasses: 'bottom-16',
+        backgroundImageUrl: '../images/cardBacks/ultimate-lux.webp',
+        backgroundImageClasses: '[object-position:47%_center]',
+        frontImageUrl: '../images/cardFronts/lux.webp',
+        frontImageClasses: '[height:calc(100%+60px)] -bottom-4 w-auto',
+    },
+    {
+        logoUrl: '../images/logos/lol-logo.png',
+        logoClasses: 'bottom-16',
+        backgroundImageUrl: '../images/cardBacks/mountain-portal.webp',
+        frontImageUrl: '../images/cardFronts/leona.webp',
+        frontImageClasses: '[height:calc(100%+170px)] -bottom-10 w-auto ',
+    },
+    {
+        logoUrl: '../images/logos/lol-logo.png',
+        logoClasses: 'bottom-16',
+        backgroundImageUrl: '../images/cardBacks/soulstorm.webp',
+        backgroundImageClasses: '[object-position:70%_center]',
+        frontImageUrl: '../images/cardFronts/tresh.webp',
+        frontImageClasses:
+            '[height:calc(100%+40px)] w-auto -translate-x-[calc(50%+40px)]',
+    },
 ];
 
 //// Scroll Controlls
@@ -96,7 +94,7 @@ const scrollToPrevCard = () => {
         <div
             @scroll="containersScrollLeft = cardsContainer.scrollLeft"
             ref="cardsContainer"
-            class="scrollbar-styled relative flex min-h-screen snap-x items-center gap-24 overflow-x-auto px-[30vw] py-16 [perspective:500px] sm:px-[50vw]"
+            class="scrollbar-styled relative flex min-h-screen snap-x items-center gap-24 overflow-x-auto overflow-y-hidden px-[30vw] py-16 [perspective:500px] sm:px-[50vw]"
         >
             <DisplayCard v-for="cardData in cardsData" :cardData="cardData" />
         </div>
@@ -114,7 +112,7 @@ const scrollToPrevCard = () => {
         >
             <svg
                 xmlns="http://www.w3.org/2000/svg"
-                class="animate-bounce-left w-11 fill-slate-400"
+                class="w-11 animate-bounce-left fill-slate-400"
                 viewBox="0 0 512 512"
             >
                 <!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
@@ -137,7 +135,7 @@ const scrollToPrevCard = () => {
         >
             <svg
                 xmlns="http://www.w3.org/2000/svg"
-                class="animate-bounce-right dur w-11 fill-slate-400"
+                class="w-11 animate-bounce-right fill-slate-400"
                 viewBox="0 0 512 512"
             >
                 <!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->

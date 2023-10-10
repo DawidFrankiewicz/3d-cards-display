@@ -38,7 +38,12 @@ defineProps({
         <!-- Card Logo -->
         <img
             v-if="cardData.logoUrl && cardData.backgroundImageUrl"
-            class="absolute bottom-5 left-1/2 z-20 -translate-x-1/2 transition-transform duration-500 group-hover:-translate-y-8"
+            :class="
+                twMerge(
+                    'absolute bottom-5 left-1/2 z-20 -translate-x-1/2 transition-transform duration-500 group-hover:-translate-y-8',
+                    cardData.logoClasses
+                )
+            "
             :src="cardData.logoUrl"
             width="180"
             height="60"
@@ -49,7 +54,7 @@ defineProps({
             v-if="cardData.frontImageUrl && cardData.backgroundImageUrl"
             :class="
                 twMerge(
-                    'absolute bottom-0 left-1/2 z-10 h-full w-full max-w-lg -translate-x-1/2 translate-y-10 object-contain opacity-0 transition-all duration-500 [mask-image:linear-gradient(to_top,transparent_25%,black_35%)] group-hover:-translate-y-10 group-hover:opacity-100',
+                    'pointer-events-none absolute bottom-0 left-1/2 z-10 h-full w-full max-w-lg -translate-x-1/2 translate-y-10 object-contain opacity-0 transition-all duration-500 [mask-image:linear-gradient(to_top,transparent_25%,black_35%)] group-hover:-translate-y-10 group-hover:opacity-100',
                     cardData.frontImageClasses
                 )
             "
