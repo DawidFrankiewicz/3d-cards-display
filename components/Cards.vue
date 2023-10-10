@@ -42,7 +42,7 @@ const cardsData = [
         backgroundImageClasses: '[object-position:70%_center]',
         frontImageUrl: '../images/cardFronts/tresh.webp',
         frontImageClasses:
-            '[height:calc(100%+40px)] w-auto -translate-x-[calc(50%+40px)]',
+            '[height:calc(100%+40px)] w-auto -translate-x-[calc(50%+40px)] [mask-image:linear-gradient(to_top,transparent_15%,black_25%)]',
     },
 ];
 
