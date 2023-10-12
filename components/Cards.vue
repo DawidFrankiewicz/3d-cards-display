@@ -94,7 +94,7 @@ const scrollToPrevCard = () => {
         <div
             @scroll="containersScrollLeft = cardsContainer.scrollLeft"
             ref="cardsContainer"
-            class="scrollbar-styled relative flex min-h-screen snap-x items-center gap-24 overflow-x-auto overflow-y-hidden px-[30vw] py-16 [perspective:500px] sm:px-[50vw]"
+            class="scrollbar-styled relative flex min-h-screen snap-x items-center gap-24 overflow-x-auto overflow-y-hidden px-[30vw] py-16 [perspective:500px] sm:px-[50%]"
         >
             <DisplayCard v-for="cardData in cardsData" :cardData="cardData" />
         </div>
