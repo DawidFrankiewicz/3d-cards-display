@@ -20,36 +20,36 @@ const cardsData = [
         frontImageClasses:
             '[height:calc(100%+120px)] -bottom-10 w-auto -translate-x-[calc(50%+40px)]',
     },
-    {
-        logoUrl: '../images/logos/lol-logo.png',
-        logoClasses: 'bottom-16',
-        backgroundImageUrl: '../images/cardBacks/ultimate-lux.webp',
-        backgroundImageClasses: '[object-position:47%_center]',
-        frontImageUrl: '../images/cardFronts/lux.webp',
-        frontImageClasses: '[height:calc(100%+60px)] -bottom-4 w-auto',
-    },
-    {
-        logoUrl: '../images/logos/lol-logo.png',
-        logoClasses: 'bottom-16',
-        backgroundImageUrl: '../images/cardBacks/mountain-portal.webp',
-        frontImageUrl: '../images/cardFronts/leona.webp',
-        frontImageClasses: '[height:calc(100%+170px)] -bottom-10 w-auto ',
-    },
-    {
-        logoUrl: '../images/logos/lol-logo.png',
-        logoClasses: 'bottom-16',
-        backgroundImageUrl: '../images/cardBacks/soulstorm.webp',
-        backgroundImageClasses: '[object-position:70%_center]',
-        frontImageUrl: '../images/cardFronts/tresh.webp',
-        frontImageClasses:
-            '[height:calc(100%+40px)] w-auto -translate-x-[calc(50%+40px)] [mask-image:linear-gradient(to_top,transparent_15%,black_25%)]',
-    },
+    // {
+    //     logoUrl: '../images/logos/lol-logo.png',
+    //     logoClasses: 'bottom-16',
+    //     backgroundImageUrl: '../images/cardBacks/ultimate-lux.webp',
+    //     backgroundImageClasses: '[object-position:47%_center]',
+    //     frontImageUrl: '../images/cardFronts/lux.webp',
+    //     frontImageClasses: '[height:calc(100%+60px)] -bottom-4 w-auto',
+    // },
+    // {
+    //     logoUrl: '../images/logos/lol-logo.png',
+    //     logoClasses: 'bottom-16',
+    //     backgroundImageUrl: '../images/cardBacks/mountain-portal.webp',
+    //     frontImageUrl: '../images/cardFronts/leona.webp',
+    //     frontImageClasses: '[height:calc(100%+170px)] -bottom-10 w-auto ',
+    // },
+    // {
+    //     logoUrl: '../images/logos/lol-logo.png',
+    //     logoClasses: 'bottom-16',
+    //     backgroundImageUrl: '../images/cardBacks/soulstorm.webp',
+    //     backgroundImageClasses: '[object-position:70%_center]',
+    //     frontImageUrl: '../images/cardFronts/tresh.webp',
+    //     frontImageClasses:
+    //         '[height:calc(100%+40px)] w-auto -translate-x-[calc(50%+40px)] [mask-image:linear-gradient(to_top,transparent_15%,black_25%)]',
+    // },
 ];
 
 //// Scroll Controlls
 // Constants
 // 1 gap width + 1 card width
-const distanceBetweenCards = 352;
+const DISTANCE_BETWEEN_CARDS = 352;
 
 // Refs
 const cardsContainer = ref(null);
@@ -70,19 +70,19 @@ onMounted(() => {
 const scrollToNextCard = () => {
     if (
         containersScrollLeft.value >=
-        containersScrollMax.value - distanceBetweenCards / 2
+        containersScrollMax.value - DISTANCE_BETWEEN_CARDS / 2
     )
         return;
     cardsContainer.value.scrollBy({
-        left: distanceBetweenCards,
+        left: DISTANCE_BETWEEN_CARDS,
         behavior: 'smooth',
     });
 };
 
 const scrollToPrevCard = () => {
-    if (containersScrollLeft.value <= 0 + distanceBetweenCards / 2) return;
+    if (containersScrollLeft.value <= 0 + DISTANCE_BETWEEN_CARDS / 2) return;
     cardsContainer.value.scrollBy({
-        left: -distanceBetweenCards,
+        left: -DISTANCE_BETWEEN_CARDS,
         behavior: 'smooth',
     });
 };
@@ -104,7 +104,7 @@ const scrollToPrevCard = () => {
             :class="
                 twMerge(
                     'absolute bottom-1 left-0 top-0 z-40 hidden w-28 items-center justify-center opacity-0 transition-opacity duration-500 [background-image:linear-gradient(270deg,rgba(255,255,255,0)0%,rgba(4,4,4,0.6)70%)] hover:opacity-100 md:flex',
-                    containersScrollLeft >= distanceBetweenCards / 2
+                    containersScrollLeft >= DISTANCE_BETWEEN_CARDS / 2
                         ? ''
                         : 'pointer-events-none hover:opacity-0'
                 )
@@ -127,7 +127,7 @@ const scrollToPrevCard = () => {
                 twMerge(
                     'absolute bottom-1 right-0 top-0 z-40 hidden w-28 items-center justify-center opacity-0 transition-opacity duration-500 [background-image:linear-gradient(90deg,rgba(255,255,255,0)0%,rgba(4,4,4,0.6)70%)] hover:opacity-100 md:flex',
                     containersScrollLeft <=
-                        containersScrollMax - distanceBetweenCards / 2
+                        containersScrollMax - DISTANCE_BETWEEN_CARDS / 2
                         ? ''
                         : 'pointer-events-none hover:opacity-0'
                 )

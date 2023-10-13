@@ -22,7 +22,6 @@
         "vue-router": "^4.2.5"
     },
     "dependencies": {
-        "gsap": "^3.12.2",
         "tailwind-merge": "^1.14.0"
     }
 }
