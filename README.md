@@ -6,6 +6,8 @@ Project is built with [Nuxt.js](https://nuxt.com/) and [TailwindCSS](https://tai
 
 ## Preview
 
+https://dawidfrankiewicz.github.io/3d-cards-display/
+
 ![Preview](./preview.png)
 
 ## Setup
